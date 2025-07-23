@@ -2909,7 +2909,53 @@ _stq.push([ "clickTrackerInit", "230101643", "0" ]);
 			var c = document.body.className;
 			c = c.replace(/tie-no-js/, 'tie-js');
 			document.body.className = c;
-		</script>
+
+			<div id="telegramPopup" class="popup-container">
+    <div class="popup-header">
+        <h3 class="text-base font-semibold">Join Our Community!</h3>
+        <button id="closePopup" class="close-button">&times;</button>
+    </div>
+    <div class="popup-body">
+        <p class="text-gray-300 mb-4 text-sm">Stay updated! Join our Telegram group for exclusive content.</p>
+        <a href="https://t.me/starfilxchatgroup" target="_blank" class="telegram-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send">
+                <path d="m22 2-7 20-4-9-9-4 20-7Z"/>
+                <path d="M15 7l-6 6"/>
+            </svg>
+            Join Telegram
+        </a>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const popup = document.getElementById('telegramPopup');
+        const closeButton = document.getElementById('closePopup');
+
+        // Function to show the popup
+        function showPopup() {
+            popup.style.display = 'block';
+        }
+
+        // Function to hide the popup
+        function hidePopup() {
+            popup.style.display = 'none';
+            // Optionally, set a flag in localStorage to not show it again for a while
+            // localStorage.setItem('telegramPopupClosed', 'true');
+        }
+
+        // Show popup after a short delay (e.g., 1 second) for better user experience
+        setTimeout(() => {
+            // Check if the popup has been closed before in this session (optional)
+            // if (!localStorage.getItem('telegramPopupClosed')) {
+                showPopup();
+            // }
+        }, 1000); // Adjust delay as needed (1000ms = 1 second)
+
+        // Event listener for the close button
+        closeButton.addEventListener('click', hidePopup);
+    });
+</script>
 	<script async="async" data-cfasync="false" src="//pl27239694.profitableratecpm.com/4bf2bc86d068bbdc49f83025b3b0e1b7/invoke.js"></script>
 <div id="container-4bf2bc86d068bbdc49f83025b3b0e1b7"></div>
 		
