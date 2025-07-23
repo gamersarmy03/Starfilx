@@ -677,6 +677,102 @@ code,pre
 	overflow: visible;
 	white-space: pre-line;
 }
+
+	/* Custom styles for the dark theme popup */
+    body {
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /* For demonstration, setting a body background to see the popup clearly */
+        background-color: #1a1a1a;
+    }
+    .popup-container {
+        display: none; /* Hidden by default */
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        z-index: 1000;
+        max-width: 300px; /* Slightly smaller max-width */
+        width: calc(100% - 2rem); /* Full width minus padding on mobile */
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Darker shadow */
+        border-radius: 1rem;
+        overflow: hidden;
+        animation: fadeIn 0.5s ease-out forwards;
+        border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .popup-header {
+        background: linear-gradient(135deg, #2c3e50, #000000); /* Dark gradient */
+        color: #e0e0e0; /* Light grey text */
+        padding: 0.6rem 1rem; /* Slightly reduced padding */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+    }
+
+    .popup-body {
+        background-color: #000000; /* Black background */
+        padding: 1rem;
+        text-align: center;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+    }
+
+    .telegram-button {
+        background: linear-gradient(45deg, #0088cc, #00aced); /* Telegram blue gradient remains */
+        color: white;
+        font-weight: bold;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.75rem;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        box-shadow: 0 4px 10px rgba(0, 136, 204, 0.3);
+    }
+
+    .telegram-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(0, 136, 204, 0.5); /* Stronger shadow on hover */
+    }
+
+    .close-button {
+        background: none;
+        border: none;
+        color: #e0e0e0; /* Light grey for close button */
+        font-size: 1.25rem;
+        cursor: pointer;
+        line-height: 1;
+        padding: 0.25rem;
+        border-radius: 50%;
+        transition: background-color 0.2s ease;
+    }
+
+    .close-button:hover {
+        background-color: rgba(255, 255, 255, 0.1); /* Lighter hover effect */
+    }
+
+    /* Responsive adjustments */
+    @media (min-width: 640px) { /* Small screens and up */
+        .popup-container {
+            max-width: 320px;
+        }
+    }
+    @media (min-width: 768px) { /* Medium screens and up */
+        .popup-container {
+            max-width: 350px;
+        }
+    }
 </style>
 <script id="wccp_pro_module" type="module">
 import devtools from 'https://www.starfilx.in/wp-content/plugins/wccp-pro/index.js';
@@ -1181,6 +1277,7 @@ function apply_class_exclusion(e)
 <link rel='preconnect' href='//c0.wp.com' />
 <link rel="alternate" type="application/rss+xml" title="STARFILX &raquo; Feed" href="https://www.starfilx.in/feed/" />
 <link rel="alternate" type="application/rss+xml" title="STARFILX &raquo; Comments Feed" href="https://www.starfilx.in/comments/feed/" />
+	<script src="https://cdn.tailwindcss.com"></script>
 		<script type="text/javascript">
 			try {
 				if( 'undefined' != typeof localStorage ){
